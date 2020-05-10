@@ -7,6 +7,23 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Menu>
+            <MenuItem Header="ファイル(_F)">
+                
+            </MenuItem>
+            <MenuItem Header="表示(_V)">
+                
+            </MenuItem>
+            <MenuItem Header="ヘルプ(_H)">
+                
+            </MenuItem>
+        </Menu>
+        <Frame>
+            
+        </Frame>
     </Grid>
 </Window>

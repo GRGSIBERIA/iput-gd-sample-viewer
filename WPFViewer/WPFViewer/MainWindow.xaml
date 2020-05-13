@@ -5,24 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFViewer" xmlns:navlocal="clr-namespace:WPFViewer.Navigations"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="alzapua" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-            <RowDefinition/>
+            <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <Menu Grid.Row="0">
             <MenuItem Header="ファイル(_F)">
-                
+                <MenuItem Header="終了(_Q)"/>
             </MenuItem>
             <MenuItem Header="表示(_V)">
-                
+                <MenuItem Header="タグビュー(_T)"/>
+                <MenuItem Header="タグ編集ビュー(_E)"/>
+                <MenuItem Header="画像レシピ(_R)"/>
+            </MenuItem>
+            <MenuItem Header="編集(_E)">
+                <MenuItem Header="コラージュの作成(_C)"/>
             </MenuItem>
             <MenuItem Header="ヘルプ(_H)">
                 
             </MenuItem>
         </Menu>
 
-        <navlocal:ShowImageUserControl Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <navlocal:ShowImageUserControl Grid.Row="1" Visibility="Hidden" />
+        <navlocal:ListingImageUserControl Grid.Row="1" Visibility="Visible" />
     </Grid>
 </Window>

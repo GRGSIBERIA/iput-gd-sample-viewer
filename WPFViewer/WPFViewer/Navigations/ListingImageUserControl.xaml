@@ -25,12 +25,12 @@
         </Grid.RowDefinitions>
 
         <!-- 表示部分 -->
-        <Grid>
+        <Grid SizeChanged="Grid_SizeChanged">
             <Grid.RowDefinitions>
-                
+                <RowDefinition x:Name="baseGridHeight"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                
+                <ColumnDefinition x:Name="baseGridWidgth"/>
             </Grid.ColumnDefinitions>
         </Grid>
 

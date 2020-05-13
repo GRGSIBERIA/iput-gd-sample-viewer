@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace WPFViewer.Navigations
 {
@@ -20,9 +21,27 @@ namespace WPFViewer.Navigations
     /// </summary>
     public partial class ListingImageUserControl : UserControl
     {
+        private double gridWidth;
+        private double gridHeight;
+
+        private void GetActualSize()
+        {
+            gridWidth = baseGridWidgth.ActualWidth;
+            gridHeight = baseGridHeight.ActualHeight;
+        }
+
         public ListingImageUserControl()
         {
             InitializeComponent();
+
+            Dispatcher.BeginInvoke(new Action(() => {
+                GetActualSize();
+            }), DispatcherPriority.Loaded);
+        }
+
+        private void Grid_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            GetActualSize();
         }
     }
 }
